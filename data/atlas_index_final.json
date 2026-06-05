@@ -1,0 +1,85 @@
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "partNo": [
+        {
+          "type": "string",
+          "analyzer": "lucene.standard"
+        },
+        {
+          "type": "autocomplete",
+          "tokenization": "edgeGram",
+          "minGrams": 2,
+          "maxGrams": 15
+        }
+      ],
+      "name": [
+        {
+          "type": "string",
+          "analyzer": "lucene.standard"
+        },
+        {
+          "type": "autocomplete",
+          "tokenization": "edgeGram",
+          "minGrams": 2,
+          "maxGrams": 15
+        }
+      ],
+      "description": {
+        "type": "string",
+        "analyzer": "lucene.standard"
+      },
+      "serialNo": {
+        "type": "string",
+        "analyzer": "lucene.keyword"
+      },
+      "batchNo": {
+        "type": "string",
+        "analyzer": "lucene.keyword"
+      },
+      "companyName": {
+        "type": "string",
+        "analyzer": "lucene.standard"
+      },
+      "companyCode": {
+        "type": "token"
+      },
+      "location": {
+        "type": "token"
+      },
+      "airportLocation": {
+        "type": "token"
+      },
+      "condition": {
+        "type": "token"
+      },
+      "materialClass": {
+        "type": "token"
+      },
+      "chapter": {
+        "type": "document",
+        "fields": {
+          "category": {
+            "type": "token"
+          }
+        }
+      },
+      "status": {
+        "type": "token"
+      },
+      "isRealPart": {
+        "type": "boolean"
+      },
+      "price": {
+        "type": "number"
+      },
+      "updatedAt": {
+        "type": "date"
+      },
+      "_id": {
+        "type": "objectId"
+      }
+    }
+  }
+}
